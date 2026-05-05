@@ -1,0 +1,6 @@
+{
+  "name": "MEAN Stack Auth System",
+  "description": "A simple university assignment project featuring AngularJS (1.x) with JWT Authentication, Node.js, and Express.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="authApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEAN Stack Assignment - Auth System</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/index.css">
+  </head>
+  <body>
+    <div>
+      <!-- Header Section -->
+      <header>
+        <div>
+          <h1>MEAN Auth <span style="color: var(--accent); font-family: 'Courier New', monospace;">v1.x</span></h1>
+          <p>Secure Single Page Application Assignment</p>
+        </div>
+        <div class="flex items-center">
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+            <span style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted);">System Status</span>
+            <span style="color: var(--accent); font-family: 'Courier New', monospace; font-size: 12px; display: flex; align-items: center; gap: 8px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--accent); animation: pulse 2s infinite;"></span>
+              LIVE SERVER
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Grid -->
+      <div class="grid">
+        <!-- Main View Area (Where AngularJS renders) -->
+        <main>
+          <div class="dashboard-content" ng-view></div>
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-status">
+          <div class="status-item">
+            <span class="status-dot"></span>
+            Node.js: Online
+          </div>
+          <div class="status-item">
+            <span class="status-dot"></span>
+            JWT: Secure
+          </div>
+        </div>
+        <div style="font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: -0.5px; font-size: 10px;">
+          Assignment-Build-2024
+        </div>
+      </footer>
+    </div>
+
+    <!-- AngularJS Libraries (Loaded via Script tags for academic simplicity) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    
+    <!-- Our Application Logic -->
+    <script src="/src/app.js"></script>
+    <script src="/src/services/authService.js"></script>
+    <script src="/src/controllers/loginController.js"></script>
+    <script src="/src/controllers/dashboardController.js"></script>
+  </body>
+</html>
+

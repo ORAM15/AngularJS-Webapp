@@ -1,0 +1,45 @@
+<div class="login-form-container" ng-controller="LoginController">
+  <div class="card-dark" style="width: 100%;">
+    <div class="text-center mb-6">
+      <h2>Assignment Login</h2>
+      <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; font-style: italic; color: var(--text-muted);">Student Portal v1.0</p>
+    </div>
+    
+    <!-- Form handling with ng-submit -->
+    <form ng-submit="submitLogin()" class="login-form">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" 
+               ng-model="user.username" 
+               placeholder="e.g. admin"
+               required 
+               id="username">
+      </div>
+      
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" 
+               ng-model="user.password" 
+               placeholder="••••••••"
+               required 
+               id="password">
+      </div>
+
+      <!-- Error Message Display -->
+      <div ng-if="errorMessage" class="error-message" style="margin-bottom: 20px;">
+        Error: {{ errorMessage }}
+      </div>
+
+      <button type="submit" 
+              class="btn-primary w-full" 
+              style="padding: 14px 24px; font-size: 15px;"
+              id="login-btn">
+        Verify Identity
+      </button>
+    </form>
+
+    <div class="form-footer">
+      <p style="margin: 0;">Credentials: admin / password123</p>
+    </div>
+  </div>
+</div>

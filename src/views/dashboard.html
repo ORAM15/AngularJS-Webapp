@@ -1,0 +1,47 @@
+<div class="card-dark" style="overflow: hidden; display: flex; flex-direction: column; height: 100%; min-height: 400px;" ng-controller="DashboardController">
+  <div class="dashboard-header">
+    <div>
+      <h2>Dashboard</h2>
+      <p style="font-size: 12px; font-family: 'Courier New', monospace;">Session ID: {{ dashboardData.user.username }}@academic-auth</p>
+    </div>
+    <button ng-click="logout()" 
+            class="btn-danger" 
+            id="logout-btn">
+      Terminate Session
+    </button>
+  </div>
+
+  <div ng-if="loading" class="loading-container">
+    <div class="spinner"></div>
+    <p>Decrypting secure data...</p>
+  </div>
+
+  <div ng-if="!loading" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 24px;">
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Authentication Summary</h3>
+        <div class="space-y-4">
+          <p>Status: <span class="status success">AUTHORIZED</span></p>
+          <p>Cipher: <span style="font-family: 'Courier New', monospace; color: var(--accent);">HS256 (JWT)</span></p>
+          <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: var(--text-muted);">"{{ dashboardData.message }}"</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>System Identity</h3>
+        <div class="space-y-4">
+          <p>Identity: <span style="font-family: 'Courier New', monospace; color: white; text-transform: uppercase;">{{ dashboardData.user.username }}</span></p>
+          <p>Health: <span style="font-family: 'Courier New', monospace; color: var(--accent);">{{ dashboardData.stats.systemStatus }}</span></p>
+          <p>Sync: <span style="font-family: 'Courier New', monospace; font-size: 12px; color: var(--text-muted);">{{ dashboardData.stats.lastLogin }}</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 16px; background-color: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 8px; display: flex; align-items: flex-start; gap: 16px;">
+      <div style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--accent); margin-top: 4px; flex-shrink: 0; box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);"></div>
+      <p style="font-size: 10px; color: var(--text-muted); font-family: 'Courier New', monospace; line-height: 1.5; text-transform: uppercase; letter-spacing: -0.5px; margin: 0;">
+        Secure Handshake complete. Token successfully verified on server-side using academic secret.
+      </p>
+    </div>
+  </div>
+</div>
